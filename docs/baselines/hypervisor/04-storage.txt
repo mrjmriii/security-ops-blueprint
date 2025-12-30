@@ -1,0 +1,8 @@
+local:
+  path: /var/lib/vz
+  content: iso,vztmpl,backup,import
+
+local-lvm:
+  type: lvmthin
+  vg: hypervisor
+  content: rootdir,images

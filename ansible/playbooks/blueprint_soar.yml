@@ -1,0 +1,9 @@
+---
+- name: Automation platform blueprint (sanitized)
+  hosts: automation
+  gather_facts: false
+
+  tasks:
+    - name: Describe automation intent (placeholder)
+      ansible.builtin.debug:
+        msg: "Automation: enrich, route, and notify across security workflows."

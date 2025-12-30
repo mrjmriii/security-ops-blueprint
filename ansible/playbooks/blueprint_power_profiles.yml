@@ -1,0 +1,9 @@
+---
+- name: Power profile blueprint (sanitized)
+  hosts: hypervisor
+  gather_facts: false
+
+  tasks:
+    - name: Describe profile intent (placeholder)
+      ansible.builtin.debug:
+        msg: "Power profiles: start/stop grouped workloads for lab vs personal mode."

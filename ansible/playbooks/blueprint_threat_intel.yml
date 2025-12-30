@@ -1,0 +1,9 @@
+---
+- name: Threat intel blueprint (sanitized)
+  hosts: threat_intel
+  gather_facts: false
+
+  tasks:
+    - name: Describe intel pipeline (placeholder)
+      ansible.builtin.debug:
+        msg: "Threat intel: enrich alerts and drive indicator management."

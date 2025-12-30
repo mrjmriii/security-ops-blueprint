@@ -1,0 +1,298 @@
+# Canonical host inventory (human-edited)
+#
+# Design goals:
+# - Single source of truth for naming + roles + management access
+# - Renders into: Ansible inventory, Terraform variables, firewall intent, docs
+#
+# Conventions used here:
+# - "mgmt" addresses are the management-plane addresses used for SSH/API access.
+# - Keep bootstrap simple: a single flat LAN, static/reserved IPs for core nodes.
+#
+# Update fields as you finalize:
+# - ansible_user (your preferred admin user on managed nodes)
+# - ssh_port if non-22
+# - tags/roles/groups as needed
+#
+hosts:
+  ctl-laptop:
+    role: controller
+    mgmt:
+      ip: 192.0.2.250
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: mrjmriii
+    tags: [workstation, controller]
+
+  hypervisor-01:
+    role: hypervisor
+    mgmt:
+      ip: 192.0.2.240
+      interface: vmbr0
+    access:
+      ssh: true
+      ansible_user: root
+      web_ui: true
+      web_ui_port: 8006
+    tags: [server, virtualization, managed]
+    notes: "hypervisor UI at https://hypervisor.example.net:8006"
+
+  backup-01:
+    role: backup
+    mgmt:
+      ip: 192.0.2.230
+      interface: nic0
+    access:
+      ssh: true
+      ansible_user: root
+      web_ui: true
+      web_ui_port: 8007
+    tags: [server, backup, managed]
+    notes: "backup appliance UI at https://backup.example.net:8007"
+
+  ca-01:
+    role: pki
+    mgmt:
+      ip: 192.0.2.220
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: debian
+    tags: [server, pki]
+    notes: "Internal CA VM (scope 2, location B). Keep powered off except for issuance/rotation."
+
+  edge-fw-01:
+    role: firewall
+    mgmt:
+      ip: 192.0.2.1
+      interface: lan
+    access:
+      web_ui: true
+      ssh: true
+      ansible_user: ansible
+    tags: [edge, bootstrap]
+    notes: "Edge firewall web UI"
+
+  lab-router-01:
+    role: lab-router
+    mgmt:
+      ip: 192.0.2.252
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: debian
+    tags: [router, lab]
+    notes: "Routes PentestNet/HiddenNet/RedTeamLab; DHCP/DNS on internal bridges."
+
+  mail-01:
+    role: mail
+    mgmt:
+      ip: 192.0.2.210
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: debian
+    tags: [server, mail]
+    notes: "Local-only mail services."
+
+  tools-01:
+    role: tools
+    mgmt:
+      ip: 192.0.2.215
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: debian
+    tags: [workstation, security, lab]
+    notes: "Security workstation VM (remote desktop enabled)."
+
+  dc-01:
+    role: directory-services
+    platform: windows
+    mgmt:
+      ip: 192.0.2.222
+      interface: eth0
+    access:
+      remote_desktop: true
+    tags: [server, windows, directory]
+    notes: "Directory services + DNS for lab.example.net."
+
+  ws-01:
+    role: workstation
+    platform: windows
+    mgmt:
+      ip: 192.0.2.223
+      interface: eth0
+    access:
+      remote_desktop: true
+    tags: [workstation, windows, domain-joined]
+    notes: "Domain-joined workstation (lab.example.net)."
+
+  ws-02:
+    role: workstation
+    platform: windows
+    mgmt:
+      ip: 192.0.2.224
+      interface: eth0
+    access:
+      remote_desktop: true
+    tags: [workstation, windows, domain-joined]
+    notes: "Domain-joined workstation (lab.example.net)."
+
+  siem-01:
+    role: siem
+    mgmt:
+      ip: 192.0.2.225
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: debian
+    tags: [server, security, soc]
+    notes: "SIEM platform single-node, domain-joined to lab.example.net."
+
+  soc-01:
+    role: soc-stack
+    mgmt:
+      ip: 192.0.2.226
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: debian
+    tags: [server, security, soc]
+    notes: "Case management + analysis + automation platforms, domain-joined to lab.example.net."
+
+  intel-01:
+    role: threat-intel
+    mgmt:
+      ip: 192.0.2.227
+      interface: eth0
+    access:
+      ssh: true
+      ansible_user: debian
+    tags: [server, security, soc]
+    notes: "Threat intel platform, domain-joined to lab.example.net."
+
+  personal-cloud-01:
+    role: personal-cloud
+    planned: true
+    mgmt:
+      ip: 192.0.2.228
+      interface: eth0
+    access:
+      web_ui: true
+      web_ui_port: 443
+    tags: [personal, cloud]
+    notes: "Personal cloud instance (example.net)."
+
+  document-archive-01:
+    role: document-archive
+    planned: true
+    mgmt:
+      ip: 192.0.2.229
+      interface: eth0
+    access:
+      web_ui: true
+      web_ui_port: 443
+    tags: [personal, documents]
+    notes: "Personal document archive instance (example.net)."
+
+  ai-workstation-01:
+    role: ai-workstation
+    planned: true
+    mgmt:
+      ip: 192.0.2.231
+      interface: eth0
+    access:
+      ssh: true
+    tags: [personal, ai]
+    notes: "GPU passthrough workstation."
+
+  adversary-01:
+    role: adversary-workstation
+    mgmt:
+      ip: 198.51.100.10
+      interface: eth0
+    access:
+      ssh: true
+    tags: [workstation, security, redteam]
+    notes: "Dual-NIC: PentestNet + RedTeamLab."
+
+  vuln-01:
+    role: vulnerable
+    mgmt:
+      ip: 198.51.100.21
+      interface: eth0
+    tags: [lab, vulnerable]
+    notes: "Vulnerable target A (PentestNet)."
+
+  vuln-02:
+    role: vulnerable
+    platform: windows
+    mgmt:
+      ip: 198.51.100.22
+      interface: eth0
+    tags: [lab, vulnerable, windows]
+    notes: "Vulnerable target B; dual-NIC PentestNet + HiddenNet."
+
+  vuln-03:
+    role: vulnerable
+    mgmt:
+      ip: 198.51.100.23
+      interface: eth0
+    tags: [lab, vulnerable]
+    notes: "Vulnerable target C (PentestNet)."
+
+  vuln-web-01:
+    role: vulnerable-web
+    mgmt:
+      ip: 198.51.100.30
+      interface: eth0
+    tags: [lab, vulnerable, web]
+    notes: "Vulnerable web app bundle (PentestNet)."
+
+  radius-01:
+    role: radius
+    mgmt:
+      ip: 198.51.100.138
+      interface: eth0
+    access:
+      ssh: true
+    tags: [server, lab, redteam]
+    notes: "RADIUS server on RedTeamLab."
+
+groups:
+  controller:
+    - ctl-laptop
+  linux_servers:
+    - hypervisor-01
+    - backup-01
+    - ca-01
+  edge:
+    - edge-fw-01
+  soc:
+    - siem-01
+    - soc-01
+    - intel-01
+  lab_router:
+    - lab-router-01
+  pentest:
+    - adversary-01
+    - vuln-01
+    - vuln-02
+    - vuln-03
+    - vuln-web-01
+  redteamlab:
+    - dc-01
+    - ws-01
+    - ws-02
+    - adversary-01
+    - radius-01
+  vulnerable:
+    - vuln-01
+    - vuln-02
+    - vuln-03
+    - vuln-web-01
+  windows:
+    - dc-01
+    - ws-01
+    - ws-02

@@ -1,0 +1,9 @@
+---
+- name: Edge firewall blueprint (sanitized)
+  hosts: edge_firewall
+  gather_facts: false
+
+  tasks:
+    - name: Describe intended posture (placeholder)
+      ansible.builtin.debug:
+        msg: "Edge firewall: enforce segmentation, DNS/DHCP, and default-deny posture."

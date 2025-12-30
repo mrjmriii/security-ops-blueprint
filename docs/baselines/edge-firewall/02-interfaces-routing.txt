@@ -1,0 +1,8 @@
+WAN: DHCP (dynamic)
+LAN: 192.0.2.1/24
+LAB: 198.18.0.1/24 (optional)
+WAP: 198.18.1.1/24
+
+Routing:
+- Default route via WAN (dynamic)
+- Direct routes for LAN, LAB, WAP

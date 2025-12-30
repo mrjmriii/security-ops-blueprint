@@ -1,0 +1,30 @@
+# Lab router DNS + DHCP (lab-only)
+domain-needed
+bogus-priv
+no-resolv
+{% for dns in lab_router_upstream_dns %}
+server={{ dns }}
+{% endfor %}
+
+bind-interfaces
+{% for lan in lab_router_lans %}
+interface={{ lan.iface }}
+{% endfor %}
+
+dhcp-authoritative
+
+{% for lan in lab_router_lans %}
+dhcp-range=set:{{ lan.name }},{{ lan.dhcp_range }}
+dhcp-option=tag:{{ lan.name }},3,{{ lan.address.split('/')[0] }}
+dhcp-option=tag:{{ lan.name }},15,{{ lan.domain }}
+{% if lan.domain_search is defined %}
+dhcp-option=tag:{{ lan.name }},119,{{ lan.domain_search | join(',') }}
+{% endif %}
+{% if lan.dns_servers is defined %}
+dhcp-option=tag:{{ lan.name }},6,{{ lan.dns_servers | join(',') }}
+{% endif %}
+{% endfor %}
+
+{% for host in lab_router_static_hosts %}
+dhcp-host={{ host.mac }},{{ host.ip }},{{ host.name }}
+{% endfor %}

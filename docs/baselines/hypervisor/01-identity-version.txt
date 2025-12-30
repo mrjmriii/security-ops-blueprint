@@ -1,0 +1,4 @@
+Hostname: hypervisor-01
+Platform: hypervisor
+Kernel: placeholder
+Role: Primary virtualization host

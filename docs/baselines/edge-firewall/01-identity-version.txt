@@ -1,0 +1,5 @@
+Hostname: edge-fw-01.example.net
+Platform: edge firewall appliance
+Version: placeholder
+Kernel: placeholder
+Role: Edge firewall, router, DNS, DHCP, NTP authority

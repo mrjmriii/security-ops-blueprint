@@ -1,0 +1,9 @@
+---
+- name: SIEM platform blueprint (sanitized)
+  hosts: siem
+  gather_facts: false
+
+  tasks:
+    - name: Describe telemetry pipeline (placeholder)
+      ansible.builtin.debug:
+        msg: "SIEM: ingest endpoint logs, normalize events, and drive alerting."

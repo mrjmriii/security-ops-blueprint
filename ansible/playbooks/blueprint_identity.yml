@@ -1,0 +1,9 @@
+---
+- name: Identity + PKI blueprint (sanitized)
+  hosts: identity
+  gather_facts: false
+
+  tasks:
+    - name: Describe identity posture (placeholder)
+      ansible.builtin.debug:
+        msg: "Identity: domain services, certificate authority, and TLS issuance."

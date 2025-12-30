@@ -1,0 +1,102 @@
+# Canonical network intent (human-edited)
+#
+# Bootstrap phase: one flat LAN until VLANs, virtualization, and edge routing complexity returns.
+#
+sites:
+  home:
+    timezone: "America/New_York"
+    notes: "Bootstrap LAN only. VLANs to be added later under networks.vlans."
+
+networks:
+  bootstrap_lan:
+    site: home
+    cidr: 192.0.2.0/24
+    gateway: 192.0.2.1
+    dns:
+      - 192.0.2.1
+    dhcp:
+      enabled: true
+      range: [192.0.2.100, 192.0.2.199]
+      domain: example.net
+      domain_search:
+        - lab.example.net
+        - example.net
+      reservations:
+        ctl-laptop: 192.0.2.250
+        hypervisor-01: 192.0.2.240
+        backup-01: 192.0.2.230
+        ca-01: 192.0.2.220
+        mail-01: 192.0.2.210
+        tools-01: 192.0.2.215
+        dc-01: 192.0.2.222
+        ws-01: 192.0.2.223
+        ws-02: 192.0.2.224
+        siem-01: 192.0.2.225
+        soc-01: 192.0.2.226
+        intel-01: 192.0.2.227
+        nextcloud-01: 192.0.2.228
+        paperless-01: 192.0.2.229
+        ai-01: 192.0.2.231
+      notes: "Reserve core nodes even if you also set static on-host during bootstrap."
+    ntp:
+      - 192.0.2.1
+    intent:
+      - "Controller and managed nodes reachable over SSH on mgmt LAN"
+      - "Edge provides DNS/DHCP/NAT during bootstrap"
+
+  pentest_net:
+    site: home
+    cidr: 198.51.100.0/24
+    gateway: 198.51.100.1
+    dns:
+      - 198.51.100.1
+    dhcp:
+      enabled: true
+      range: [198.51.100.20, 198.51.100.50]
+      domain: pentest.lab.example.net
+      domain_search:
+        - pentest.lab.example.net
+        - lab.example.net
+      notes: "DHCP served by lab-router-01 (vmbr_pentest)."
+    intent:
+      - "Vulnerable targets and offensive tooling live here."
+      - "No east-west access by default; SOC telemetry allowed."
+
+  hidden_net:
+    site: home
+    cidr: 203.0.113.0/24
+    gateway: 203.0.113.1
+    dns:
+      - 203.0.113.1
+    dhcp:
+      enabled: true
+      range: [203.0.113.20, 203.0.113.50]
+      domain: hidden.lab.example.net
+      domain_search:
+        - hidden.lab.example.net
+        - lab.example.net
+      notes: "DHCP served by lab-router-01 (vmbr_hidden)."
+    intent:
+      - "Restricted pivot network."
+      - "Egress tightly controlled; SOC telemetry allowed."
+
+  redteamlab_net:
+    site: home
+    cidr: 198.51.100.128/24
+    gateway: 198.51.100.129
+    dns:
+      - 192.0.2.222
+    dhcp:
+      enabled: true
+      range: [198.51.100.148, 198.51.100.178]
+      domain: redteamlab.lab.example.net
+      domain_search:
+        - redteamlab.lab.example.net
+        - lab.example.net
+      notes: "DHCP served by lab-router-01; DNS points to dc-01 for directory services."
+    intent:
+      - "RedTeamLab domain clients + supporting services."
+      - "Directory-services DNS reachable via lab-router policy."
+
+# Future placeholder for VLANs (leave empty until you are ready)
+vlans: {}

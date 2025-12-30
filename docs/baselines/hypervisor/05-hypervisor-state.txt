@@ -1,0 +1,5 @@
+Cluster: not configured
+No VMs or containers deployed.
+Backup job: nightly 05:05 to backup storage (snapshot, compression, repeat-missed, no prune).
+Backup appliance storage configured (client-side encryption enabled).
+Firewall directories exist but no rules defined.

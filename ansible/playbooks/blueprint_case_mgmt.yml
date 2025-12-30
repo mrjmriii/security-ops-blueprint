@@ -1,0 +1,9 @@
+---
+- name: Case management blueprint (sanitized)
+  hosts: case_mgmt
+  gather_facts: false
+
+  tasks:
+    - name: Describe incident workflow (placeholder)
+      ansible.builtin.debug:
+        msg: "Case management: triage, escalation, and analyst workflows."

@@ -1,0 +1,3 @@
+Python: 3.12.3
+Ansible: installed (user-local)
+Terraform: not installed

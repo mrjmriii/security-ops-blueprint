@@ -1,0 +1,6 @@
+# Example tag map (role -> tags)
+power_tags:
+  soc: ["soc"]
+  redteam: ["redteam"]
+  vulnerable: ["vulnerable"]
+  personal: ["personal"]

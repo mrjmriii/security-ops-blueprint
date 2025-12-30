@@ -1,0 +1,5 @@
+Default deny policy.
+Explicit allow rules for LAN and WAP interfaces.
+NAT:
+- Outbound NAT on WAN for internal subnets
+- No inbound port forwards configured

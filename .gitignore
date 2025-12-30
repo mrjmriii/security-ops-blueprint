@@ -1,0 +1,23 @@
+# Python
+.venv/
+
+# OS noise
+.DS_Store
+
+# Editor noise
+.vscode/
+data/facts/edge-firewall/config.sample.xml
+data/facts/edge-firewall/raw/
+
+# edge firewall raw configs (never commit)
+data/facts/edge-firewall/config.xml
+
+# Ansible vault password (local only)
+ansible/.vault_pass
+ansible/inventory/group_vars/all/vault.yml
+
+# Local Ansible temp files
+.ansible/
+
+# Validation logs
+docs/logs/

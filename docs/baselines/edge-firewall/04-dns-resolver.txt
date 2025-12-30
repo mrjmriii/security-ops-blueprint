@@ -1,0 +1,5 @@
+DNS resolver enabled.
+- Recursive resolver
+- Private address protection enabled
+- Host overrides and DHCP leases integrated
+- IPv6 disabled for DNS resolution

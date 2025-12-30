@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: block-raw-edge-firewall-config
+        name: Block raw edge firewall config exports
+        entry: bash -c 'git diff --cached --name-only | grep -E "^data/facts/edge-firewall/config-.*\.xml$" && exit 1 || exit 0'
+        language: system
+        pass_filenames: false

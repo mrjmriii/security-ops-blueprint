@@ -1,0 +1,4 @@
+Hostname: backup-01
+Platform: backup appliance
+Kernel: placeholder
+Role: Dedicated backup appliance

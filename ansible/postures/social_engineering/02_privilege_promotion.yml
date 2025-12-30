@@ -1,0 +1,42 @@
+---
+# Social-engineering posture: Over-privileged user promotion
+# WARNING: Lab-only scenario. Do not run in production.
+- name: "Posture 02_privilege_promotion - Over-privileged user promotion (lab-only)"
+  hosts: all
+  gather_facts: false
+
+  vars:
+    posture_id: "02_privilege_promotion"
+    posture_action: "{{ posture_action | default('apply') }}"
+    posture_notes: ""
+    posture_scope: []
+
+  tasks:
+    - name: Apply posture (placeholder)
+      ansible.builtin.debug:
+        msg: "TODO: apply posture {{ posture_id }} on {{ inventory_hostname }}"
+      when: posture_action == 'apply'
+      tags:
+        - social
+        - posture
+        - apply
+        - soc
+
+    - name: Revert posture (placeholder)
+      ansible.builtin.debug:
+        msg: "TODO: revert posture {{ posture_id }} on {{ inventory_hostname }}"
+      when: posture_action == 'revert'
+      tags:
+        - social
+        - posture
+        - revert
+        - soc
+
+    - name: Validate posture (placeholder)
+      ansible.builtin.debug:
+        msg: "TODO: validate posture {{ posture_id }} on {{ inventory_hostname }}"
+      tags:
+        - social
+        - posture
+        - validate
+        - soc

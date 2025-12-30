@@ -1,0 +1,9 @@
+---
+- name: Validation blueprint (sanitized)
+  hosts: controller
+  gather_facts: false
+
+  tasks:
+    - name: Describe validation flow (placeholder)
+      ansible.builtin.debug:
+        msg: "Validate DNS, TLS, and alert pipeline before running detections."

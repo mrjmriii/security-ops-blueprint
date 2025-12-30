@@ -1,0 +1,3 @@
+# Baselines are immutable reference data
+docs/baselines/** linguist-generated=true
+docs/baselines/** -text

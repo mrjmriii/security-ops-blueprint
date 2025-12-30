@@ -1,0 +1,9 @@
+---
+- name: Hypervisor blueprint (sanitized)
+  hosts: hypervisor
+  gather_facts: false
+
+  tasks:
+    - name: Describe VM lifecycle policy (placeholder)
+      ansible.builtin.debug:
+        msg: "Hypervisor: provision core services, enforce resource caps, and tag workloads."

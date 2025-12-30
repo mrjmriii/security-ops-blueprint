@@ -1,0 +1,2 @@
+Datastores:
+- backup: /backup (xfs, ~1.6T usable)

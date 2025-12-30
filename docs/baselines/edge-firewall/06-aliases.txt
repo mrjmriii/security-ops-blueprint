@@ -1,0 +1,4 @@
+No user-defined aliases present.
+Firewall rules reference:
+- Interface networks (LAN__NETWORK, OPT2__NETWORK)
+- System-managed tables (bogons)

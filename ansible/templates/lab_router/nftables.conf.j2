@@ -1,0 +1,60 @@
+#!/usr/sbin/nft -f
+
+flush ruleset
+
+define WAN_IF = "{{ lab_router_wan_iface }}"
+define LAN_IFS = { {% for lan in lab_router_lans %} "{{ lan.iface }}"{% if not loop.last %}, {% endif %}{% endfor %} }
+define LAN_NETS = { {% for lan in lab_router_lans %} {{ lan.address.split('/')[0] }}/{{ lan.address.split('/')[1] }}{% if not loop.last %}, {% endif %}{% endfor %} }
+define MGMT_NET = {{ lab_router_mgmt_subnet }}
+define DC_IP = {{ lab_router_dc_dns }}
+define SIEM_IP = {{ lab_router_siem_ip }}
+define MGMT_ALLOW_PORTS = { {% for p in lab_router_mgmt_allow_ports %}{{ p }}{% if not loop.last %}, {% endif %}{% endfor %} }
+
+table inet filter {
+  chain input {
+    type filter hook input priority 0; policy drop;
+    ct state established,related accept
+    iif lo accept
+
+    iifname $WAN_IF ip saddr $MGMT_NET tcp dport 22 accept
+    iifname $LAN_IFS udp dport {53,67} accept
+    iifname $LAN_IFS tcp dport 53 accept
+    iifname $LAN_IFS icmp type echo-request accept
+  }
+
+  chain forward {
+    type filter hook forward priority 0; policy drop;
+    ct state established,related accept
+
+    # Allow LAN -> WAN (default egress)
+    iifname $LAN_IFS oifname $WAN_IF accept
+
+    # Allow mgmt -> lab networks for admin + HTTP/S
+    iifname $WAN_IF ip saddr $MGMT_NET oifname $LAN_IFS tcp dport $MGMT_ALLOW_PORTS accept
+    iifname $WAN_IF ip saddr $MGMT_NET oifname $LAN_IFS icmp type echo-request accept
+
+    # Allow SIEM platform agent traffic to SOC
+    iifname $LAN_IFS ip daddr $SIEM_IP tcp dport { {% for p in lab_router_siem_ports %}{{ p }}{% if not loop.last %}, {% endif %}{% endfor %} } accept
+    iifname $LAN_IFS ip daddr $SIEM_IP udp dport { {% for p in lab_router_siem_ports %}{{ p }}{% if not loop.last %}, {% endif %}{% endfor %} } accept
+
+    # Allow RedTeamLab to reach directory services
+    iifname "{{ lab_router_redteam_iface }}" ip daddr $DC_IP tcp dport {53,88,135,139,389,445,464,636,3268,3269,9389} accept
+    iifname "{{ lab_router_redteam_iface }}" ip daddr $DC_IP udp dport {53,88,389,464} accept
+
+    {% if lab_router_allow_interlan | bool %}
+    # Optional: allow inter-LAN (lab-only)
+    iifname $LAN_IFS oifname $LAN_IFS accept
+    {% endif %}
+  }
+
+  chain output {
+    type filter hook output priority 0; policy accept;
+  }
+}
+
+table ip nat {
+  chain postrouting {
+    type nat hook postrouting priority 100; policy accept;
+    oifname $WAN_IF ip saddr $LAN_NETS masquerade
+  }
+}

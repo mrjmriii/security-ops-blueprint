@@ -1,0 +1,12 @@
+SSH config defines hosts:
+- edge-fw-01 (user ansible)
+- hypervisor-01 (user root)
+- backup-01 (user root)
+- mail-01 (user debian)
+- ca-01 (user debian)
+- tools-01 (user debian)
+- siem-01 (user debian)
+- soc-01 (user debian)
+- intel-01 (user debian)
+
+Note: Windows hosts use remote management, not SSH.

@@ -1,0 +1,2 @@
+Time synchronized.
+Primary NTP source: edge-fw-01.example.net.

@@ -1,0 +1,9 @@
+---
+- name: Backup pipeline blueprint (sanitized)
+  hosts: backup_appliance
+  gather_facts: false
+
+  tasks:
+    - name: Describe backup intent (placeholder)
+      ansible.builtin.debug:
+        msg: "Backup appliance: scheduled jobs, retention, and verification."

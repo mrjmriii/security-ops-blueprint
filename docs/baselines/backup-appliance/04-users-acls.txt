@@ -1,0 +1,8 @@
+Users:
+- root@local
+- hypervisor@backup (service account)
+- edge-fw@backup (edge firewall config backups)
+
+ACLs:
+- /datastore/backup: BackupAdmin for hypervisor@backup and hypervisor@backup!hypervisor
+- /datastore/backup: BackupAdmin for edge-fw@backup and edge-fw@backup!edge-fw

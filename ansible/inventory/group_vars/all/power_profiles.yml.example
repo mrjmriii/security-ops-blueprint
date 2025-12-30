@@ -1,0 +1,8 @@
+# Example power profiles
+power_profiles:
+  lab_mode:
+    start: ["soc", "redteam", "vulnerable"]
+    stop: ["personal"]
+  personal_mode:
+    start: ["personal"]
+    stop: ["soc", "redteam", "vulnerable"]

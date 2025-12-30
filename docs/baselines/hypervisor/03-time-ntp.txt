@@ -1,0 +1,3 @@
+Time sync via chrony.
+Primary NTP source: edge-fw-01.example.net.
+System clock synchronized.

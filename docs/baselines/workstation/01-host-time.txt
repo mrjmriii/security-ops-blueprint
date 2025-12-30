@@ -1,0 +1,3 @@
+Hostname: ctl-laptop
+Time zone: Etc/UTC
+System clock synchronized: unknown (chrony daemon not reachable).

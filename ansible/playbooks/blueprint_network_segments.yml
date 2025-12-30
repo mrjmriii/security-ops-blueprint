@@ -1,0 +1,9 @@
+---
+- name: Network segmentation blueprint (sanitized)
+  hosts: hypervisor
+  gather_facts: false
+
+  tasks:
+    - name: Describe segment intent (placeholder)
+      ansible.builtin.debug:
+        msg: "Network segments: isolated ranges, routing controls, and telemetry visibility."
