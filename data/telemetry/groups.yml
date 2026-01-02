@@ -1,0 +1,23 @@
+# Telemetry agent group model (sanitized)
+agent_groups:
+  soc:
+    - soc-01
+    - siem-01
+    - intel-01
+  workstations:
+    - ws-01
+    - ws-02
+  infra:
+    - edge-fw-01
+    - hypervisor-01
+    - backup-01
+    - lab-router-01
+    - mail-01
+  lab:
+    - dc-01
+
+group_overrides:
+  soc: |
+    <!-- placeholder: per-group agent.conf overrides -->
+  workstations: |
+    <!-- placeholder: per-group agent.conf overrides -->

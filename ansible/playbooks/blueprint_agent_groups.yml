@@ -1,0 +1,20 @@
+---
+- name: Telemetry agent group scaffolding - blueprint
+  hosts: siem
+  gather_facts: false
+  vars:
+    telemetry_group_state: "{{ telemetry_group_state | default('present') }}"
+    telemetry_group_data_file: "{{ telemetry_group_data_file | default('data/telemetry/groups.yml') }}"
+
+  tasks:
+    - name: Describe group creation from the data model (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Create or remove telemetry agent groups using
+          {{ telemetry_group_data_file }} (state={{ telemetry_group_state }}).
+
+    - name: Describe per-group configuration rendering (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Render per-group agent configuration from
+          ansible/templates/telemetry/agent-conf.j2 and publish to the manager.

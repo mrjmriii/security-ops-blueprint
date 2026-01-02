@@ -1,0 +1,25 @@
+name: Sanitize Blueprint (Template)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  sanitize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout blueprint repo
+        uses: actions/checkout@v4
+        with:
+          path: blueprint
+
+      - name: Checkout internal repo (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.INTERNAL_REPO_URL }}
+          token: ${{ secrets.INTERNAL_REPO_TOKEN }}
+          path: internal
+
+      - name: Run sanitization (dry run)
+        run: |
+          cd blueprint
+          INTERNAL_ROOT="../internal" DRY_RUN=1 scripts/sanitize-blueprint.sh

@@ -41,6 +41,7 @@ This repo is intentionally sanitized:
 - Internal IPs/domains are mapped to reserved example ranges.
 - Tool-specific references are replaced with generic roles.
 - Secrets, tokens, and operational credentials are excluded.
+- Pseudotwin alignment workflow lives in `docs/pseudotwin-map.md` and `docs/blueprint-sanitization.md`.
 
 ## AI-assisted note
 This repository includes AI-assisted drafting and normalization. All changes are reviewed, edited, and curated before publication.

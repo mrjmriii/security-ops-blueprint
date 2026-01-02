@@ -1,0 +1,13 @@
+---
+- name: SOC integration wiring - blueprint
+  hosts: case_mgmt
+  gather_facts: false
+  vars:
+    soc_integration_state: "{{ soc_integration_state | default('present') }}"
+
+  tasks:
+    - name: Describe integration wiring sequence (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Configure SOC integrations (SIEM, case management, analysis,
+          threat intel, automation) with state={{ soc_integration_state }}.

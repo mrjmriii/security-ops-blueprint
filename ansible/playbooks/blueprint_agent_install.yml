@@ -1,0 +1,32 @@
+---
+- name: Telemetry agent enrollment (Linux) - blueprint
+  hosts: linux_endpoints
+  gather_facts: false
+  vars:
+    telemetry_agent_state: "{{ telemetry_agent_state | default('present') }}"
+    telemetry_manager_host: "{{ telemetry_manager_host | default('siem-01.example.net') }}"
+    telemetry_registration_token: "{{ telemetry_registration_token | default('REPLACE_ME') }}"
+
+  tasks:
+    - name: Describe Linux agent install + enrollment flow (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Install and enroll telemetry agents on Linux endpoints against
+          {{ telemetry_manager_host }} using a registration token
+          (state={{ telemetry_agent_state }}).
+
+- name: Telemetry agent enrollment (Windows) - blueprint
+  hosts: windows_endpoints
+  gather_facts: false
+  vars:
+    telemetry_agent_state: "{{ telemetry_agent_state | default('present') }}"
+    telemetry_manager_host: "{{ telemetry_manager_host | default('siem-01.example.net') }}"
+    telemetry_registration_token: "{{ telemetry_registration_token | default('REPLACE_ME') }}"
+
+  tasks:
+    - name: Describe Windows agent install + enrollment flow (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Install and enroll telemetry agents on Windows endpoints using the
+          MSI package, WinRM, and {{ telemetry_manager_host }}
+          (state={{ telemetry_agent_state }}).

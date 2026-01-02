@@ -1,0 +1,13 @@
+---
+- name: Edge DNS filtering baseline - blueprint
+  hosts: edge_firewall
+  gather_facts: false
+  vars:
+    dns_filter_state: "{{ dns_filter_state | default('present') }}"
+
+  tasks:
+    - name: Describe DNS filter deployment (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Apply edge DNS filtering with state={{ dns_filter_state }} and
+          validate block/allow policy behavior.

@@ -1,0 +1,4 @@
+# pattern	replacement
+__INTERNAL_DOMAIN__	example.net
+__INTERNAL_DOMAIN_SHORT__	example
+__INTERNAL_IP_PREFIX__	192.0.2.

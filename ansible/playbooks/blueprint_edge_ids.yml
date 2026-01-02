@@ -1,0 +1,13 @@
+---
+- name: Edge IDS/IPS baseline - blueprint
+  hosts: edge_firewall
+  gather_facts: false
+  vars:
+    ids_state: "{{ ids_state | default('present') }}"
+
+  tasks:
+    - name: Describe IDS/IPS deployment (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Apply edge IDS/IPS configuration with state={{ ids_state }} and
+          publish alert telemetry to the SIEM pipeline.

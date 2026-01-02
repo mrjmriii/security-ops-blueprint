@@ -32,3 +32,25 @@ Use lab-only sources that are safe and documented:
 - Which integrations are required vs. optional?
 - Which systems should remain isolated?
 - Which data should never leave the lab?
+
+## Automation entrypoint
+### Purpose
+- Provide a sanitized automation hook for wiring SOC integrations.
+
+### Preconditions
+- API keys stored in secure vars (vault or secrets manager).
+- Network routes and TLS trust established between platforms.
+
+### Steps to run
+- `ANSIBLE_CONFIG=ansible/ansible.cfg ansible-playbook ansible/playbooks/blueprint_soc_integrations.yml --limit case_mgmt`
+
+### Expected signals/telemetry
+- Enrichment calls succeed between platforms.
+- Automation triggers create or update cases from alerts.
+
+### Validation checklist
+- Confirm integration status in each platform UI.
+- Confirm enrichment tasks run end-to-end on a test alert.
+
+### Rollback
+- Re-run `blueprint_soc_integrations.yml` with `-e soc_integration_state=absent`.

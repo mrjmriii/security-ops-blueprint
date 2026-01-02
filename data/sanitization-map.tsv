@@ -1,0 +1,20 @@
+# source_path (relative to internal repo)	dest_path (relative to blueprint repo)	purpose
+docs/telemetry-agent-operations.md	docs/telemetry-agent-operations.md	Telemetry agent runbook
+docs/remote-access-connector.md	docs/remote-access-connector.md	Remote access connector runbook
+docs/edge-ids-ips.md	docs/edge-ids-ips.md	Edge IDS/IPS runbook
+docs/edge-dns-filter.md	docs/edge-dns-filter.md	Edge DNS filtering runbook
+docs/windows-remote-management.md	docs/windows-remote-management.md	Windows remote management runbook
+docs/soc-integrations.md	docs/soc-integrations.md	SOC integrations notes
+docs/pseudotwin-map.md	docs/pseudotwin-map.md	Pseudotwin mapping reference
+docs/blueprint-sanitization.md	docs/blueprint-sanitization.md	Sanitization workflow
+ansible/playbooks/blueprint_agent_install.yml	ansible/playbooks/blueprint_agent_install.yml	Agent enrollment scaffold
+ansible/playbooks/blueprint_agent_groups.yml	ansible/playbooks/blueprint_agent_groups.yml	Agent group scaffold
+ansible/playbooks/blueprint_agent_group_assign.yml	ansible/playbooks/blueprint_agent_group_assign.yml	Agent group assignment scaffold
+ansible/playbooks/blueprint_agent_api_password_rotate.yml	ansible/playbooks/blueprint_agent_api_password_rotate.yml	API credential rotation scaffold
+ansible/playbooks/blueprint_soc_integrations.yml	ansible/playbooks/blueprint_soc_integrations.yml	SOC integrations scaffold
+ansible/playbooks/blueprint_remote_access_connector.yml	ansible/playbooks/blueprint_remote_access_connector.yml	Remote access connector scaffold
+ansible/playbooks/blueprint_edge_ids.yml	ansible/playbooks/blueprint_edge_ids.yml	Edge IDS/IPS scaffold
+ansible/playbooks/blueprint_edge_dns_filter.yml	ansible/playbooks/blueprint_edge_dns_filter.yml	Edge DNS filtering scaffold
+ansible/playbooks/blueprint_windows_remote_mgmt_tls.yml	ansible/playbooks/blueprint_windows_remote_mgmt_tls.yml	Windows remote management scaffold
+data/telemetry/groups.yml	data/telemetry/groups.yml	Telemetry group data model
+ansible/templates/telemetry/agent-conf.j2	ansible/templates/telemetry/agent-conf.j2	Telemetry agent template

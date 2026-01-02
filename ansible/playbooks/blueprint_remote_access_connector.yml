@@ -1,0 +1,16 @@
+---
+- name: Remote access connector deployment - blueprint
+  hosts: hypervisor
+  gather_facts: false
+  vars:
+    connector_state: "{{ connector_state | default('present') }}"
+    connector_network_name: "{{ connector_network_name | default('REPLACE_ME') }}"
+    connector_access_token: "{{ connector_access_token | default('REPLACE_ME') }}"
+    connector_refresh_token: "{{ connector_refresh_token | default('REPLACE_ME') }}"
+
+  tasks:
+    - name: Describe connector deployment (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Deploy a remote access connector (state={{ connector_state }})
+          for network {{ connector_network_name }} on the hypervisor layer.

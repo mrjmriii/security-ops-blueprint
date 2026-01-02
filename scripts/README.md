@@ -11,3 +11,6 @@ Bootstrap and helper scripts.
 
 ## Validation playlist
 - Blueprint validation script: `scripts/validate-blueprint.sh`
+
+## Sanitization helper
+- Blueprint sanitize script: `scripts/sanitize-blueprint.sh`

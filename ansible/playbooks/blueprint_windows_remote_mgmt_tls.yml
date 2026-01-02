@@ -1,0 +1,14 @@
+---
+- name: Windows remote management TLS baseline - blueprint
+  hosts: windows_endpoints
+  gather_facts: false
+  vars:
+    winrm_tls_state: "{{ winrm_tls_state | default('present') }}"
+    winrm_skip_cert_validation: "{{ winrm_skip_cert_validation | default(false) }}"
+
+  tasks:
+    - name: Describe WinRM TLS configuration (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Enforce WinRM over HTTPS (state={{ winrm_tls_state }},
+          skip_cert_validation={{ winrm_skip_cert_validation }}).

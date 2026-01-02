@@ -1,0 +1,16 @@
+---
+- name: Telemetry agent group assignment - blueprint
+  hosts: siem
+  gather_facts: false
+  vars:
+    telemetry_group_assign_state: "{{ telemetry_group_assign_state | default('present') }}"
+    telemetry_group_data_file: "{{ telemetry_group_data_file | default('data/telemetry/groups.yml') }}"
+    telemetry_group_force_single: "{{ telemetry_group_force_single | default(false) }}"
+
+  tasks:
+    - name: Describe assignment of agents to groups (placeholder)
+      ansible.builtin.debug:
+        msg: >-
+          Assign agents to groups from {{ telemetry_group_data_file }}
+          (state={{ telemetry_group_assign_state }},
+          force_single={{ telemetry_group_force_single }}).
