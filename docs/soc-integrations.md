@@ -1,6 +1,7 @@
 # SOC Integrations (Generic Wiring Notes)
 
-Goal: record integration intent and signal flow so automation is safe to implement later.
+## Purpose
+Record integration intent and signal flow so automation is safe to implement later.
 
 ## Integration Patterns (baseline)
 - **SIEM -> Case management (direct)**

@@ -47,6 +47,10 @@ Start with `docs/README.md` for the full index.
 - Agent requests log: `docs/agent-requests.md`
 - Agent configs: `docs/agents/`
 
+## Standards
+- Documentation standards: `docs/documentation-standards.md`
+- Terminology: `docs/terminology.md`
+
 ## Public repo hygiene
 This repo is intentionally sanitized:
 - Internal IPs/domains are mapped to reserved example ranges.

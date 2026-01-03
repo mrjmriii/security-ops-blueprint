@@ -1,6 +1,7 @@
 # Crypto Agility Plan (Rotation + Hygiene)
 
-Goal: rotate credentials, keys, and certificates safely and predictably without breaking access.
+## Purpose
+Rotate credentials, keys, and certificates safely and predictably without breaking access.
 
 ## Scope
 - Ansible Vault secrets (endpoints, servers, app creds).

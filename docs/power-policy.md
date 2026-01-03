@@ -1,6 +1,7 @@
 # Power Policy
 
-Goal: keep always-on footprint minimal while ensuring core services stay reachable.
+## Purpose
+Keep always-on footprint minimal while ensuring core services stay reachable.
 
 ## Always on
 - edge firewall: firewall, DNS, DHCP, WAN edge.

@@ -1,4 +1,6 @@
 # Blueprint Validation Playlist
+
+## Purpose
 Quick, repeatable checks for DNS, reachability, HTTPS, and TLS trust.
 
 ## Run

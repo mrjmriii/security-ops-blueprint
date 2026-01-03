@@ -1,6 +1,8 @@
 # Personal Services Plan (example.net)
 
-Goal: stand up personal services (personal cloud, document archive, AI workstation) that run when the lab is down, without diluting SOC safety or reproducibility.
+## Purpose
+Stand up personal services (personal cloud, document archive, AI workstation) that run
+when the lab is down, without diluting SOC safety or reproducibility.
 
 ## Scope (planned)
 - Personal cloud: `personal-cloud-01.example.net`

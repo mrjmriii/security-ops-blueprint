@@ -1,6 +1,7 @@
 # RedTeamLab Plan (PentestNet / HiddenNet / RedTeamLab)
 
-Goal: provide a repeatable, lab-only adversary environment that feeds the SOC
+## Purpose
+Provide a repeatable, lab-only adversary environment that feeds the SOC
 with realistic telemetry without destabilizing core infrastructure.
 
 ## Networks

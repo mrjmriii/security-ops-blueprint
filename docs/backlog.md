@@ -27,3 +27,4 @@ mapped to the delivery model in `docs/project-planning.md`.
 | BL-012 | Add agent ops model + token budget tracking | Important | Waterfall | Done | Agent model, budget plan, and request log published. |
 | BL-013 | Add weekly token guardrail for low-budget cycles | Important | Waterfall | Done | Weekly guardrail + checkpoint table documented. |
 | BL-014 | Add vision + agent persona configs | Important | Waterfall | Done | Vision doc and agent configs published and linked. |
+| BL-015 | Harmonize documentation with standards + terminology | Important | Waterfall | Done | Standards + terminology docs published; key plans aligned to Purpose. |

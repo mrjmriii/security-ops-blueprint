@@ -59,6 +59,10 @@ Human-readable doctrine, baselines, and design notes.
 - Agent requests log: `docs/agent-requests.md`
 - Agent configs: `docs/agents/`
 
+## Standards
+- Documentation standards: `docs/documentation-standards.md`
+- Terminology: `docs/terminology.md`
+
 ## Baselines
 - `docs/baselines/edge-firewall`
 - `docs/baselines/hypervisor`

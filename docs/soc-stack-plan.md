@@ -1,5 +1,9 @@
 # SOC Stack Plan (lab.example.net)
 
+## Purpose
+- Deliver a reproducible SOC stack aligned to `docs/vision.md`.
+- Keep signal flow observable and reversible through validation.
+
 ## Scope
 - Deployment model C (hybrid): SIEM on its own VM; case management + analysis + automation on one VM; threat intel on its own VM.
 - LAN-only exposure.

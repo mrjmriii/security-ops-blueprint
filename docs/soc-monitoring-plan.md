@@ -1,6 +1,7 @@
 # SOC Monitoring Plan (Endpoint Telemetry + Threat Intel)
 
-Goal: ensure every lab endpoint is monitored and detections are testable, repeatable,
+## Purpose
+Ensure every lab endpoint is monitored and detections are testable, repeatable,
 and tied to response workflows in case management platform/analysis platform/threat intel platform.
 
 ## Endpoint Coverage (SIEM platform)
