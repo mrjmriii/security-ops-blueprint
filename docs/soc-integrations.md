@@ -3,16 +3,18 @@
 Goal: record integration intent and signal flow so automation is safe to implement later.
 
 ## Integration Patterns (baseline)
+- **SIEM -> Case management (direct)**
+  - Push alerts directly into case management with an org-scoped API key.
+  - Include an org selector header when multi-tenant is enabled.
 - **Case management <-> Analysis platform**
   - Configure case management to call analysis APIs for enrichment.
   - Install analyzers/responders appropriate for lab scope.
 - **Case management <-> Threat intel platform**
   - Use a LAN-only API key for enrichment and IOC lookup.
-- **SIEM -> Automation platform -> Case management**
-  - Prefer a webhook-based integration to avoid brittle scripts.
-  - Automation platform creates cases/alerts in case management.
-- **SIEM -> Threat intel platform (optional)**
-  - IOC enrichment only; avoid bi-directional sharing in lab.
+- **Threat intel -> Analysis platform (optional)**
+  - Enrich indicators prior to triage; keep write-back disabled in lab.
+- **SIEM -> Automation platform -> Case management (optional)**
+  - Use automation only if direct alert push is unavailable or brittle.
 
 ## Source Tracking
 Track upstream integration sources in a private repo or internal doc:
@@ -20,6 +22,11 @@ Track upstream integration sources in a private repo or internal doc:
 - Commit/tag pin
 - Installation instructions
 - Known limitations
+
+## Least-privilege posture
+- Default to scoped service users with only `manageAlert`-level rights.
+- If admin keys are used to unblock alert creation, log a follow-up to
+  revert to least privilege once profile assignments are fixed.
 
 ## Test Feeds + Telemetry Generators
 Use lab-only sources that are safe and documented:
@@ -45,12 +52,15 @@ Use lab-only sources that are safe and documented:
 - `ANSIBLE_CONFIG=ansible/ansible.cfg ansible-playbook ansible/playbooks/blueprint_soc_integrations.yml --limit case_mgmt`
 
 ### Expected signals/telemetry
-- Enrichment calls succeed between platforms.
-- Automation triggers create or update cases from alerts.
+- Alerts land in case management with a consistent source reference.
+- Analysis jobs complete and return artifacts in case management.
+- Threat intel lookups succeed and return IOC context.
 
 ### Validation checklist
 - Confirm integration status in each platform UI.
-- Confirm enrichment tasks run end-to-end on a test alert.
+- Confirm SIEM alert -> case management ingestion (one test alert).
+- Confirm case management -> analysis enrichment on a test observable.
+- Confirm threat intel feed sync or lookup succeeds.
 
 ### Rollback
 - Re-run `blueprint_soc_integrations.yml` with `-e soc_integration_state=absent`.

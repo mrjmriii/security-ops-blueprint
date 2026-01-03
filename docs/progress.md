@@ -12,6 +12,10 @@
 - Added lab-router provisioning + routing plan and internal bridge layout.
 - Documented Wi-Fi isolation policy in edge firewall policies.
 
+## 2026-01-03
+- Synced SOC integration runbook with lab wiring (direct SIEM -> case mgmt, case mgmt -> analysis, case mgmt -> threat intel).
+- Added least-privilege note for service keys with a follow-up to remove admin usage once profiles are corrected.
+
 ## 2025-12-28
 - Directory services and endpoint-join workflows stabilized.
 - Remote management over TLS documented and tightened.
