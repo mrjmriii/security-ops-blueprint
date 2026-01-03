@@ -28,3 +28,4 @@ mapped to the delivery model in `docs/project-planning.md`.
 | BL-013 | Add weekly token guardrail for low-budget cycles | Important | Waterfall | Done | Weekly guardrail + checkpoint table documented. |
 | BL-014 | Add vision + agent persona configs | Important | Waterfall | Done | Vision doc and agent configs published and linked. |
 | BL-015 | Harmonize documentation with standards + terminology | Important | Waterfall | Done | Standards + terminology docs published; key plans aligned to Purpose. |
+| BL-016 | Normalize runbooks to doc lint checklist | Important | Waterfall | Done | Runbooks aligned to required sections and checklist added. |

@@ -25,3 +25,10 @@ Keep documentation consistent, searchable, and aligned to `docs/vision.md`.
 ## Evidence
 - Validation logs are recorded in `docs/logs/`.
 - Summaries go to `docs/progress.md`.
+
+## Doc Lint Checklist
+Run before merge:
+- Runbooks include: Purpose, Preconditions, Steps to run, Validation checklist, Rollback/Revert.
+- Plans include: Purpose, Scope, Dependencies, Risks, Validation.
+- Terms align with `docs/terminology.md`.
+- Lab-only settings are labeled and reversible.
