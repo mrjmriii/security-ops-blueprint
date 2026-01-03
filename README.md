@@ -36,12 +36,16 @@ These are vendor-neutral scaffolds that define intent and sequencing:
 ## Documentation
 Start with `docs/README.md` for the full index.
 
+## Vision
+- Vision and BHAG: `docs/vision.md`
+
 ## Planning
 - Project planning model: `docs/project-planning.md`
 - Backlog: `docs/backlog.md`
 - Project governance scaffolds: `docs/project-governance.md`
 - AI agent operating model: `docs/ai-agents.md`
 - Agent requests log: `docs/agent-requests.md`
+- Agent configs: `docs/agents/`
 
 ## Public repo hygiene
 This repo is intentionally sanitized:

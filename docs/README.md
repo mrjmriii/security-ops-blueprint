@@ -48,12 +48,16 @@ Human-readable doctrine, baselines, and design notes.
 - Validation playlist: `docs/validation-playlist.md`
 - Directory services bootstrap: `docs/directory-services.md`
 
+## Vision
+- Vision and BHAG: `docs/vision.md`
+
 ## Planning
 - Project planning model: `docs/project-planning.md`
 - Backlog: `docs/backlog.md`
 - Project governance scaffolds: `docs/project-governance.md`
 - AI agent operating model: `docs/ai-agents.md`
 - Agent requests log: `docs/agent-requests.md`
+- Agent configs: `docs/agents/`
 
 ## Baselines
 - `docs/baselines/edge-firewall`

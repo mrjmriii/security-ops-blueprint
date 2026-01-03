@@ -11,6 +11,11 @@ keeping the source of truth in GitHub and the public view in this blueprint.
 - Board of Directors: GitHub `main` and its protected history.
 - Public: sanitized blueprint output for external consumers.
 
+## Agent Config Files
+- `docs/agents/project-manager.yml`
+- `docs/agents/builder.yml`
+- `docs/agents/analyst.yml`
+
 ## Agent Communications (Standardized)
 All agent comms are written as short updates in docs and PRs.
 
