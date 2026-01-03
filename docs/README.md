@@ -48,6 +48,10 @@ Human-readable doctrine, baselines, and design notes.
 - Validation playlist: `docs/validation-playlist.md`
 - Directory services bootstrap: `docs/directory-services.md`
 
+## Planning
+- Project planning model: `docs/project-planning.md`
+- Backlog: `docs/backlog.md`
+
 ## Baselines
 - `docs/baselines/edge-firewall`
 - `docs/baselines/hypervisor`

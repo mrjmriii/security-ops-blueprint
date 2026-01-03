@@ -36,6 +36,10 @@ These are vendor-neutral scaffolds that define intent and sequencing:
 ## Documentation
 Start with `docs/README.md` for the full index.
 
+## Planning
+- Project planning model: `docs/project-planning.md`
+- Backlog: `docs/backlog.md`
+
 ## Public repo hygiene
 This repo is intentionally sanitized:
 - Internal IPs/domains are mapped to reserved example ranges.
