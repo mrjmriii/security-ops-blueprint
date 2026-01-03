@@ -9,6 +9,17 @@ when the lab is down, without diluting SOC safety or reproducibility.
 - Document archive: `document-archive-01.example.net`
 - AI workstation: `ai-workstation-01.example.net` (GPU passthrough)
 
+## Dependencies
+- Hypervisor resources available for personal services VMs.
+- Edge firewall DNS/DHCP overrides configured for the domain.
+- Internal CA available for TLS issuance and trust distribution.
+- Storage capacity for documents and model data.
+
+## Risks
+- Resource contention with SOC lab workloads.
+- Data loss without backup coverage or retention.
+- GPU passthrough conflicts with other VMs.
+
 ## Networking + DNS
 - Services live on the bootstrap LAN: `192.0.2.0/24`.
 - Static DHCP reservations + DNS host overrides in edge firewall.

@@ -3,6 +3,19 @@
 ## Purpose
 Record integration intent and signal flow so automation is safe to implement later.
 
+## Dependencies
+- SIEM, case management, analysis, and threat intel services reachable.
+- API keys stored in secure vars (vault or secrets manager).
+- TLS trust established between SOC components.
+
+## Risks
+- Alert flooding if thresholds are too low.
+- Over-privileged API keys in runtime paths.
+- Version drift between integrations and upstream APIs.
+
+## Validation
+- Use the validation checklist in the Automation section.
+
 ## Integration Patterns (baseline)
 - **SIEM -> Case management (direct)**
   - Push alerts directly into case management with an org-scoped API key.

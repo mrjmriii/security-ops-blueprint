@@ -4,6 +4,17 @@
 Provide a repeatable, lab-only adversary environment that feeds the SOC
 with realistic telemetry without destabilizing core infrastructure.
 
+## Dependencies
+- Internal hypervisor bridges created for lab networks.
+- Lab router provisioned with NAT and firewall policy.
+- Edge firewall static routes to lab networks applied.
+- Telemetry manager reachable for log intake.
+
+## Risks
+- Network bleed between lab segments if ACLs drift.
+- Resource contention with SOC core services.
+- Vulnerable images exposed outside the lab networks.
+
 ## Networks
 - **PentestNet**: 198.51.100.0/24 (GW 198.51.100.1)
 - **HiddenNet**: 203.0.113.0/24 (GW 203.0.113.1)
@@ -53,3 +64,8 @@ web exploits, suspicious UAs, anonymizer activity, malware tests, and identity a
 - Baseline snapshots after provisioning.
 - Power profiles to start/stop groups (SOC core vs RedTeamLab vs targets).
 - Revert-to-good playbook before/after exercises.
+
+## Validation
+- Confirm lab networks route only through the lab router.
+- Ensure telemetry ingests events from lab targets.
+- Run `docs/validation-playlist.md` after bringing targets online.

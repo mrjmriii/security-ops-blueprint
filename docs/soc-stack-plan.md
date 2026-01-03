@@ -14,6 +14,24 @@
 - SIEM agents on all endpoints after the stack is stable.
 - Dashboard UI hosted on the SOC host (no containers required).
 
+## Dependencies
+- Hypervisor reachable with adequate resources for SOC VMs.
+- Edge firewall DNS/DHCP overrides in place for lab domain.
+- Internal CA available for TLS issuance and trust distribution.
+- Directory services reachable for domain joins and LDAP integration.
+- Package repositories reachable from SOC hosts.
+
+## Risks
+- Search backend compatibility drift or resource contention.
+- TLS trust gaps if CA distribution lags host provisioning.
+- Under-sized storage for logs/indices (retention failures).
+- Over-privileged API keys in runtime paths.
+
+## Validation
+- Run the blueprint validation playlist.
+- Confirm API status for SIEM/case management/analysis/threat intel.
+- Verify alert routing and enrichment in the case management UI.
+
 ## Inventory and Sizing (baseline guidance)
 - `dc-01.lab.example.net` (directory services + DNS)
   - 2 vCPU / 4-8 GB RAM / 80 GB disk

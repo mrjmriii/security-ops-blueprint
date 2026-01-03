@@ -4,6 +4,12 @@
 Ensure every lab endpoint is monitored and detections are testable, repeatable,
 and tied to response workflows in case management platform/analysis platform/threat intel platform.
 
+## Dependencies
+- Telemetry manager reachable on enrollment ports.
+- Agent group model defined in `data/telemetry/groups.yml`.
+- TLS trust established for SOC services and mail alerts.
+- Threat intel and analysis services reachable for enrichment.
+
 ## Endpoint Coverage (SIEM platform)
 All endpoints run SIEM platform agents:
 - Core servers: hypervisor, backup appliance, CA, mail, SOC, lab router.
@@ -49,6 +55,11 @@ Lab-only tests to generate detections:
 
 ## Validation
 Use `docs/validation-playlist.md` and record artifacts in `docs/progress.md`.
+
+## Risks
+- Alert noise overwhelming analysts without tuning.
+- Missing endpoints due to enrollment gaps or offline hosts.
+- Storage growth from verbose logging.
 
 ## Notes
 - All detections are lab-only.

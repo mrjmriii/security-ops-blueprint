@@ -3,6 +3,15 @@
 ## Purpose
 Keep always-on footprint minimal while ensuring core services stay reachable.
 
+## Dependencies
+- Hypervisor reachable for start/stop actions.
+- Tags and profiles defined in inventory vars.
+- Backups scheduled on the backup appliance before power-down.
+
+## Risks
+- Shutting down critical services (DNS/directory services) can break automation.
+- Missed backups if the backup appliance is offline during schedules.
+
 ## Always on
 - edge firewall: firewall, DNS, DHCP, WAN edge.
 - hypervisor: virtualization control plane.

@@ -10,6 +10,20 @@ Rotate credentials, keys, and certificates safely and predictably without breaki
 - CA operations (issue new leafs; keep root offline).
 - Service passwords (directory services, mail, app accounts).
 
+## Dependencies
+- Maintenance window approved and communicated.
+- Internal CA available for certificate issuance.
+- Access to inventory of current secrets and owners.
+
+## Risks
+- Lockouts if credentials rotate out of order.
+- TLS trust failures if CA distribution lags.
+- Service downtime if validations are skipped.
+
+## Validation
+- Run `docs/validation-playlist.md` after each phase.
+- Confirm critical logins and API access succeed.
+
 ## Principles
 - Time-boxed maintenance windows.
 - One class of secret per change set.
