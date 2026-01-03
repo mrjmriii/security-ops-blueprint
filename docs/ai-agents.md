@@ -47,6 +47,12 @@ Rules:
 - Requests must include reason, impact, and rollback or recovery plan.
 - Monthly reset on the first business day.
 
+## Weekly Guardrail
+When remaining weekly budget is <= 10%, only accept:
+- Urgent + Important items from the Eisenhower matrix.
+- Validation or documentation that unblocks production safety.
+All other work is deferred to the next cycle.
+
 ## Token Overage Request Template
 - Date:
 - Agent:

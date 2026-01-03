@@ -12,3 +12,8 @@ Track token overage requests and approvals in a human-readable format.
 | Month | PM | Builder | Analyst | Reserve | Notes |
 | --- | --- | --- | --- | --- | --- |
 | YYYY-MM | 00% | 00% | 00% | 00% | TBD |
+
+## Weekly Checkpoints
+| Week | Remaining Budget | Decision |
+| --- | --- | --- |
+| YYYY-WW | 00% | TBD |

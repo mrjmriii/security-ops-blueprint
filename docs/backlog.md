@@ -25,3 +25,4 @@ mapped to the delivery model in `docs/project-planning.md`.
 | BL-010 | Document API key rotation cadence | Important | Kanban | Ready | Rotation steps + schedule documented. |
 | BL-011 | Add project governance scaffolds (RACI, SWOT, PESTLE, compliance) | Important | Waterfall | Done | Planning templates published in docs. |
 | BL-012 | Add agent ops model + token budget tracking | Important | Waterfall | Done | Agent model, budget plan, and request log published. |
+| BL-013 | Add weekly token guardrail for low-budget cycles | Important | Waterfall | Done | Weekly guardrail + checkpoint table documented. |
