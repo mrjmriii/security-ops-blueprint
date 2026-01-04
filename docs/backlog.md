@@ -31,3 +31,8 @@ mapped to the delivery model in `docs/project-planning.md`.
 | BL-016 | Normalize runbooks to doc lint checklist | Important | Waterfall | Done | Runbooks aligned to required sections and checklist added. |
 | BL-017 | Normalize plan docs with dependencies/risks/validation | Important | Waterfall | Done | Plan docs updated to include dependencies, risks, and validation guidance. |
 | BL-018 | Add doc lint script for runbooks + plans | Important | Waterfall | Done | `scripts/validate-docs.sh` enforces headings. |
+| BL-019 | Governance compliance sprint kickoff + milestones | Important | Waterfall | Ready | Sprint plan published; kickoff scheduled; milestones confirmed. |
+| BL-020 | Publish classification + sanitize checklist | Important | Waterfall | Ready | Checklist published; public release steps documented. |
+| BL-021 | Public blueprint audit for vendor-specific terms and RFC1918 | Important | Agile | Ready | Audit log saved; findings remediated or accepted with rationale. |
+| BL-022 | Pseudotwin sync hardening with pre-publish scans | Important | Waterfall | Ready | Pre-publish scans documented and runnable; gates added to sync workflow. |
+| BL-023 | Responsible AI exposure response policy enforcement | Important | Waterfall | Ready | Enforcement steps documented; audit evidence captured. |
