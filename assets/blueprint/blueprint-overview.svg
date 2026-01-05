@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Security Ops Blueprint Overview</title>
+  <desc id="desc">Visual summary of identity, segmentation, telemetry, and validation with a scale path from small business to enterprise.</desc>
+  <style>
+    :root {
+      --bg: #f8f4ee;
+      --bg-2: #efe7dc;
+      --grid: #d8d2c7;
+      --ink: #1b1f23;
+      --muted: #4d5b66;
+      --card: #ffffff;
+      --stroke: #d6d0c5;
+      --accent-1: #1f8a8a;
+      --accent-2: #e08b3a;
+      --accent-3: #2f6fb3;
+      --accent-4: #2a8b5a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1216;
+        --bg-2: #151b22;
+        --grid: #2a333d;
+        --ink: #e6edf3;
+        --muted: #a8b3bf;
+        --card: #121820;
+        --stroke: #2a333d;
+        --accent-1: #4cd4cc;
+        --accent-2: #f6b05a;
+        --accent-3: #6da7ff;
+        --accent-4: #59d08b;
+      }
+    }
+    text {
+      font-family: "Space Grotesk", "IBM Plex Sans", "Segoe UI", sans-serif;
+      fill: var(--ink);
+    }
+    .muted { fill: var(--muted); }
+    .title { font-size: 34px; font-weight: 700; letter-spacing: 0.5px; }
+    .subtitle { font-size: 16px; font-weight: 600; }
+    .tagline { font-size: 14px; }
+    .card { fill: var(--card); stroke: var(--stroke); stroke-width: 1; }
+    .card-title { font-size: 16px; font-weight: 700; }
+    .card-body { font-size: 12.5px; }
+    .footer { fill: var(--card); stroke: var(--stroke); stroke-width: 1; }
+    .label { font-size: 12px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; }
+  </style>
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--bg)" />
+      <stop offset="100%" stop-color="var(--bg-2)" />
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="var(--grid)" stroke-width="1" opacity="0.4" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg-gradient)" />
+  <rect width="1200" height="700" fill="url(#grid)" opacity="0.35" />
+
+  <circle cx="1035" cy="110" r="88" fill="none" stroke="var(--accent-2)" stroke-width="6" opacity="0.25" />
+  <circle cx="1000" cy="85" r="48" fill="var(--accent-1)" opacity="0.18" />
+
+  <text x="80" y="100" class="title">Security Ops Blueprint</text>
+  <text x="80" y="132" class="subtitle">Portfolio: security engineer / junior architect / devsecops generalist</text>
+  <text x="80" y="156" class="tagline muted">Identity + segmentation + telemetry + validation, built to scale from small business to enterprise.</text>
+
+  <text x="80" y="210" class="label muted">Core pillars</text>
+
+  <rect x="70" y="230" width="250" height="230" rx="16" class="card" />
+  <rect x="70" y="230" width="250" height="6" rx="3" fill="var(--accent-1)" />
+  <text x="90" y="270" class="card-title">Identity</text>
+  <text x="90" y="295" class="card-body muted">Directory and auth baselines</text>
+  <text x="90" y="315" class="card-body muted">PKI/TLS lifecycle</text>
+  <text x="90" y="335" class="card-body muted">Least privilege routing</text>
+  <text x="90" y="355" class="card-body muted">Lifecycle onboarding</text>
+
+  <rect x="340" y="230" width="250" height="230" rx="16" class="card" />
+  <rect x="340" y="230" width="250" height="6" rx="3" fill="var(--accent-2)" />
+  <text x="360" y="270" class="card-title">Segmentation</text>
+  <text x="360" y="295" class="card-body muted">Zones, routes, and trust</text>
+  <text x="360" y="315" class="card-body muted">Edge policy guardrails</text>
+  <text x="360" y="335" class="card-body muted">Service exposure control</text>
+  <text x="360" y="355" class="card-body muted">Failover patterns</text>
+
+  <rect x="610" y="230" width="250" height="230" rx="16" class="card" />
+  <rect x="610" y="230" width="250" height="6" rx="3" fill="var(--accent-3)" />
+  <text x="630" y="270" class="card-title">Telemetry</text>
+  <text x="630" y="295" class="card-body muted">SIEM, case, intel flow</text>
+  <text x="630" y="315" class="card-body muted">Agent coverage by group</text>
+  <text x="630" y="335" class="card-body muted">Noise tuning + baselines</text>
+  <text x="630" y="355" class="card-body muted">Signal fidelity checks</text>
+
+  <rect x="880" y="230" width="250" height="230" rx="16" class="card" />
+  <rect x="880" y="230" width="250" height="6" rx="3" fill="var(--accent-4)" />
+  <text x="900" y="270" class="card-title">Validation</text>
+  <text x="900" y="295" class="card-body muted">Checklists and drills</text>
+  <text x="900" y="315" class="card-body muted">BIA, RTO, RPO mapping</text>
+  <text x="900" y="335" class="card-body muted">Evidence and artifacts</text>
+  <text x="900" y="355" class="card-body muted">Rollback guidance</text>
+
+  <rect x="70" y="500" width="1060" height="120" rx="18" class="footer" />
+  <text x="90" y="540" class="subtitle">Delivery model</text>
+  <text x="90" y="565" class="tagline muted">Plan -> automate -> validate -> evidence, with minimal diffs and repeatable checks.</text>
+  <text x="90" y="595" class="tagline muted">Artifacts: playbooks, runbooks, sprints, backlog, validation logs.</text>
+
+  <text x="840" y="540" class="subtitle">Scale path</text>
+  <text x="840" y="565" class="tagline muted">SMB -> mid-market -> enterprise</text>
+  <line x1="840" y1="585" x2="1110" y2="585" stroke="var(--accent-3)" stroke-width="4" stroke-linecap="round" />
+  <circle cx="840" cy="585" r="6" fill="var(--accent-3)" />
+  <circle cx="1110" cy="585" r="6" fill="var(--accent-3)" />
+</svg>

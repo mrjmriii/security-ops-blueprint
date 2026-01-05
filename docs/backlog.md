@@ -58,6 +58,7 @@ mapped to the delivery model in `docs/project-planning.md`.
 | BL-048 | Advanced wireless penetration testing automation | Important | Agile | Ready | WPA/WPA2/WPA3 and enterprise workflows automated; evidence stored. |
 | BL-049 | Wireless security hardening automation | Important | Waterfall | Ready | Wireless hardening controls automated; validation evidence captured. |
 | BL-050 | Web application security automation | Important | Agile | Ready | OWASP-aligned testing automation; evidence stored; detections mapped. |
+| BL-051 | Make SVG assets dark-mode friendly | Important | Waterfall | Ready | SVG assets render legibly in light and dark modes; color tokens documented; preview checklist added. |
 | BL-019 | Governance compliance sprint kickoff + milestones | Important | Waterfall | Ready | Sprint plan published; kickoff scheduled; milestones confirmed. |
 | BL-020 | Publish classification + sanitize checklist | Important | Waterfall | Ready | Checklist published; public release steps documented. |
 | BL-021 | Public blueprint audit for vendor-specific terms and RFC1918 | Important | Agile | Ready | Audit log saved; findings remediated or accepted with rationale. |

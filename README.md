@@ -1,23 +1,25 @@
 # security-ops-blueprint
 Vendor-neutral security operations blueprint for identity, segmentation, telemetry, and validation. This is a sanitized, public-facing companion to a private infrastructure repository. Names, domains, IPs, and tool references are generalized on purpose.
 
-## Scope
-- Edge firewall routing, DHCP/DNS, and access control
-- Hypervisor + backup appliance baseline expectations
-- Directory services and internal PKI/TLS
-- SOC primitives: SIEM, case management, analysis, threat intel, automation
-- Network segmentation and lab routing
-- Validation-first operations (DNS/TLS/HTTP checks)
+![Security Ops Blueprint overview](assets/blueprint/blueprint-overview.svg)
 
-## What this is
-- A clear, reproducible blueprint with vendor-agnostic playbooks and docs
-- A reference for designing reliable signal flow, not just installing tools
-- A public artifact that explains intent and sequencing
+## Portfolio snapshot
+- Target roles: Security Engineer, Junior Security Architect, DevSecOps Generalist
+- Design intent: scalable from small business to enterprise without changing core control objectives
+- Delivery focus: reproducible automation, validation-first operations, minimal-diff change control
 
-## What this is not
-- A deployment for any specific product
-- A complete turn-key install (secrets and vendors live elsewhere)
-- A one-size-fits-all SOC cookbook
+## What you will find here
+- Vendor-neutral playbooks that express intent and sequencing
+- Operator-ready runbooks, sprint plans, and backlog items with exit criteria
+- Validation hooks that describe how to prove the system works
+- Pseudotwin sanitation rules that keep the public mirror safe
+
+## How to read it
+1. Start with `docs/README.md` for the documentation map
+2. Review `docs/vision.md` and `docs/project-planning.md` for intent and delivery model
+3. Browse `docs/backlog.md` and `docs/sprints/` for current priorities
+4. Skim the playbooks in `ansible/playbooks/` to see the automation scaffolds
+5. Cross-check `docs/documentation-standards.md` and `docs/terminology.md`
 
 ## Blueprint playbooks
 These are vendor-neutral scaffolds that define intent and sequencing:
@@ -33,30 +35,22 @@ These are vendor-neutral scaffolds that define intent and sequencing:
 - `ansible/playbooks/blueprint_validation.yml`
 - `ansible/playbooks/blueprint_power_profiles.yml`
 
-## Documentation
-Start with `docs/README.md` for the full index.
+## Evidence of rigor
+- Clear delivery model with dependencies, risks, and validation checklists
+- CISSP-aligned language across continuity, governance, and operational controls
+- Lab-only offensive posture content includes warnings and revert guidance
+- Emphasis on repeatable tests and artifacts, not slideware
 
-## Vision
-- Vision and BHAG: `docs/vision.md`
-
-## Planning
-- Project planning model: `docs/project-planning.md`
-- Backlog: `docs/backlog.md`
-- Project governance scaffolds: `docs/project-governance.md`
-- AI agent operating model: `docs/ai-agents.md`
-- Agent requests log: `docs/agent-requests.md`
-- Agent configs: `docs/agents/`
-
-## Standards
-- Documentation standards: `docs/documentation-standards.md`
-- Terminology: `docs/terminology.md`
+## Related repositories
+- Private infrastructure IaC (restricted): `https://github.com/mrjmriii/iac-homelab`
+- Purple-team certification lab (separate track): `https://github.com/mrjmriii/purple-team-certification-lab`
 
 ## Public repo hygiene
 This repo is intentionally sanitized:
-- Internal IPs/domains are mapped to reserved example ranges.
-- Tool-specific references are replaced with generic roles.
-- Secrets, tokens, and operational credentials are excluded.
-- Pseudotwin alignment workflow lives in `docs/pseudotwin-map.md` and `docs/blueprint-sanitization.md`.
+- Internal IPs/domains are mapped to reserved example ranges
+- Tool-specific references are replaced with generic roles
+- Secrets, tokens, and operational credentials are excluded
+- Pseudotwin alignment workflow lives in `docs/pseudotwin-map.md` and `docs/blueprint-sanitization.md`
 
 ## AI-assisted note
 This repository includes AI-assisted drafting and normalization. All changes are reviewed, edited, and curated before publication.
