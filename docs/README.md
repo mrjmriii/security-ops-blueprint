@@ -69,5 +69,8 @@ Human-readable doctrine, baselines, and design notes.
 - `docs/baselines/backup-appliance`
 - `docs/baselines/workstation`
 
+## Dashboard Links
+- Purple Team Certification Lab (external): `https://github.com/mrjmriii/purple-team-certification-lab/blob/main/README.md`
+
 ## Progress
 - `docs/progress.md`

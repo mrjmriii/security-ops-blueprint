@@ -4,6 +4,11 @@
 Provide a repeatable, lab-only adversary environment that feeds the SOC
 with realistic telemetry without destabilizing core infrastructure.
 
+## Purple Team Certification Lab (external)
+The phase-driven purple team certification lab lives in a separate repo:
+- https://github.com/mrjmriii/purple-team-certification-lab
+This blueprint links to it for planning only (no automation is stored here).
+
 ## Scope
 - Adversary lab networks and segmented targets.
 - Vulnerable targets and lab tooling used for detection validation.
