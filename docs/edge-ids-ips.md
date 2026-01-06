@@ -19,6 +19,7 @@
 - Telemetry forwarded to the SIEM pipeline.
 
 ## Validation checklist
+- `scripts/validate-edge.sh`
 - `ANSIBLE_CONFIG=ansible/ansible.cfg ansible -i ansible/inventory/hosts.yml edge_firewall -m shell -a "service ids status"`
 - Generate a benign test signature and confirm an alert.
 - Confirm alert visibility in the SIEM platform UI.

@@ -4,7 +4,7 @@
 - Blueprint (pseudotwin): the sanitized public companion to a private lab repo.
 - SOC stack: SIEM + case management + analysis + threat intel + automation.
 - Signal flow: detect -> triage -> enrich -> respond.
-- Validation playlist: `docs/validation-playlist.md`.
+- Validation playlists: `docs/validation-playlist.md` + `scripts/validate-*.sh`.
 - Posture: a lab-only drift scenario used for detection validation.
 - Agent: Project Manager, Builder, or Analyst (see `docs/ai-agents.md`).
 - Board of Directors: GitHub `main` history (source of truth).

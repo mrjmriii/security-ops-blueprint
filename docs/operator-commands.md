@@ -40,6 +40,9 @@ Run from the repo root:
 
 ## Validation checklist
 - `scripts/validate-blueprint.sh`
+- `scripts/validate-soc.sh`
+- `scripts/validate-edge.sh`
+- `scripts/validate-windows-remote.sh`
 - `ANSIBLE_CONFIG=ansible/ansible.cfg ansible -i ansible/inventory/hosts.yml all -m ping`
 - `ANSIBLE_CONFIG=ansible/ansible.cfg ansible-playbook ansible/playbooks/blueprint_validation.yml --check`
 

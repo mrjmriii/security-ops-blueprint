@@ -28,7 +28,7 @@
 - Over-privileged API keys in runtime paths.
 
 ## Validation
-- Run the blueprint validation playlist.
+- Run the core validation playlist and the relevant topic playlists.
 - Confirm API status for SIEM/case management/analysis/threat intel.
 - Verify alert routing and enrichment in the case management UI.
 

@@ -45,7 +45,7 @@ Human-readable doctrine, baselines, and design notes.
 - Personal services plan: `docs/personal-services-plan.md`
 - SOC integrations map: `docs/soc-integrations.md`
 - Crypto agility plan: `docs/crypto-agility-plan.md`
-- Validation playlist: `docs/validation-playlist.md`
+- Validation playlists: `docs/validation-playlist.md`
 - Directory services bootstrap: `docs/directory-services.md`
 
 ## Vision

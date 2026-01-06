@@ -20,6 +20,7 @@
 - Windows security logs show management sessions over TLS.
 
 ## Validation checklist
+- `scripts/validate-windows-remote.sh`
 - `ANSIBLE_CONFIG=ansible/ansible.cfg ansible -i ansible/inventory/hosts.yml windows_endpoints -m ansible.windows.win_ping`
 - Confirm WinRM listener is HTTPS-only on the host.
 

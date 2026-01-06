@@ -9,6 +9,11 @@ RUNBOOKS=(
   docs/edge-dns-filter.md
   docs/remote-access-connector.md
   docs/windows-remote-management.md
+  docs/validation/core.md
+  docs/validation/soc.md
+  docs/validation/edge.md
+  docs/validation/windows-remote.md
+  docs/validation/remote-access.md
   docs/telemetry-agent-operations.md
   docs/operator-commands.md
   docs/social-engineering-postures.md

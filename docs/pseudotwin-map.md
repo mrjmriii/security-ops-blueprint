@@ -17,7 +17,7 @@
 | Windows remote management | `ansible/playbooks/blueprint_windows_remote_mgmt_tls.yml`, `docs/windows-remote-management.md` | TLS hardening. |
 | Social-engineering postures | `docs/social-engineering-postures.md`, `ansible/postures/social_engineering/` | Lab-only posture drift tests. |
 | Power profiles | `ansible/playbooks/blueprint_power_profiles.yml`, `docs/power-policy.md` | Safe lab power modes. |
-| Validation checks | `scripts/validate-blueprint.sh`, `docs/validation-playlist.md` | DNS/TLS/HTTP spot checks. |
+| Validation checks | `scripts/validate-*.sh`, `docs/validation-playlist.md`, `docs/validation/` | Topic-scoped connectivity and service checks. |
 
 ## Alignment checklist
 - Update `data/sanitization-map.tsv` when new internal entrypoints appear.

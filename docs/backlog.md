@@ -59,6 +59,9 @@ mapped to the delivery model in `docs/project-planning.md`.
 | BL-049 | Wireless security hardening automation | Important | Waterfall | Ready | Wireless hardening controls automated; validation evidence captured. |
 | BL-050 | Web application security automation | Important | Agile | Ready | OWASP-aligned testing automation; evidence stored; detections mapped. |
 | BL-051 | Make SVG assets dark-mode friendly | Important | Waterfall | Ready | SVG assets render legibly in light and dark modes; color tokens documented; preview checklist added. |
+| BL-052 | Edge IDS baseline + SIEM ingestion validation | Important | Agile | Ready | IDS alerts log present; SIEM ingest confirmed; `scripts/validate-edge.sh` OK with log captured. |
+| BL-053 | SOC validation API-key pass + redirect handling | Important | Agile | Ready | `scripts/validate-soc.sh` returns OK for API checks with keys; expected redirects classified; log captured. |
+| BL-054 | Backup validation playlist script + runbook | Important | Waterfall | Ready | `scripts/validate-backups.sh` + runbook added; evidence log captured. |
 | BL-019 | Governance compliance sprint kickoff + milestones | Important | Waterfall | Ready | Sprint plan published; kickoff scheduled; milestones confirmed. |
 | BL-020 | Publish classification + sanitize checklist | Important | Waterfall | Ready | Checklist published; public release steps documented. |
 | BL-021 | Public blueprint audit for vendor-specific terms and RFC1918 | Important | Agile | Ready | Audit log saved; findings remediated or accepted with rationale. |

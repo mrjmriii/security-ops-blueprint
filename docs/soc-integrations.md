@@ -76,6 +76,7 @@ Use lab-only sources that are safe and documented:
 - Threat intel lookups succeed and return IOC context.
 
 ### Validation checklist
+- `scripts/validate-soc.sh` (summary API/web status checks)
 - Confirm integration status in each platform UI.
 - Confirm SIEM alert -> case management ingestion (one test alert).
 - Confirm case management -> analysis enrichment on a test observable.

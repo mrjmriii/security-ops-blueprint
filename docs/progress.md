@@ -2,8 +2,8 @@
 
 ## Validation Entry Template
 - Date: YYYY-MM-DD
-- Command: `scripts/validate-blueprint.sh`
-- Log: `docs/logs/blueprint-validate-YYYYMMDD-HHMMSS.log`
+- Command: `scripts/validate-<topic>.sh`
+- Log: `docs/logs/<topic>-validate-YYYYMMDD-HHMMSS.log`
 - Summary: Short result summary + follow-ups.
 
 ## 2026-01-05

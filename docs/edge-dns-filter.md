@@ -27,6 +27,7 @@
 - DNS filter logs rotate at configured limits without flooding the pipeline.
 
 ## Validation checklist
+- `scripts/validate-edge.sh`
 - `ANSIBLE_CONFIG=ansible/ansible.cfg ansible -i ansible/inventory/hosts.yml edge_firewall -m shell -a "service dns-filter status"`
 - Query a known test domain and confirm block behavior.
 - Confirm blocked event in the SIEM UI.

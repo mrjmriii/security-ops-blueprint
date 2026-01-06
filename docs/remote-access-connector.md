@@ -20,6 +20,7 @@
 - Lab resources reachable through the connector path.
 
 ## Validation checklist
+- `scripts/validate-remote-access.sh`
 - `ANSIBLE_CONFIG=ansible/ansible.cfg ansible -i ansible/inventory/hosts.yml hypervisor -m shell -a "systemctl is-active remote-access-connector"`
 - Confirm the connector shows healthy in the admin portal.
 - Test a resource URL via the remote access client.
