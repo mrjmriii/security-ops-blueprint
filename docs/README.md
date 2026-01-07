@@ -44,6 +44,7 @@ Human-readable doctrine, baselines, and design notes.
 - SOC monitoring plan: `docs/soc-monitoring-plan.md`
 - Red team lab plan: `docs/redteamlab-plan.md`
 - Personal services plan: `docs/personal-services-plan.md`
+- AI workstation blueprint: `docs/ai-workstation.md`
 - SOC integrations map: `docs/soc-integrations.md`
 - Crypto agility plan: `docs/crypto-agility-plan.md`
 - Validation playlists: `docs/validation-playlist.md`
