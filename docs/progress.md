@@ -19,6 +19,7 @@
 ## 2026-01-07
 - Added endpoint firewall + middlebox plan and a sanitized UFW inventory template.
 - Added a sanitized AI workstation blueprint with local-only data handling.
+- Added an activity-based power policy plan.
 
 ## 2026-01-04
 - Rewrote public history to remove accidentally unsanitized internal details.

@@ -45,6 +45,27 @@ Recommended tags:
 - `personal`: personal cloud, document archive, AI workstation.
 - `soc`, `redteam`, `vuln`: finer-grained shutdown control.
 
+## Activity-based power plan
+Use this matrix to map operator activity to the minimum required footprint.
+Keep changes small and reversible; prefer profiles when possible.
+
+| Activity | Required footprint | Recommended action |
+| --- | --- | --- |
+| Idle / baseline monitoring | edge firewall, hypervisor, backup appliance | Keep always-on only. |
+| SOC operations (triage/response) | Always-on + SIEM + case mgmt + intel | Start SOC profile. |
+| Directory services training | SOC operations + directory services + workstations | Start the identity/workstation profile. |
+| Adversary lab exercise | SOC operations + lab router + targets | Start red team + target profiles. |
+| AI document analysis | Always-on + AI workstation | Start personal services profile. |
+| PKI issuance / rotation | Always-on + CA | Start CA on-demand profile; shut down after issuance. |
+| Mail alert validation | Always-on + mail service | Start mail profile when testing alerts. |
+
+## Change control (activity switches)
+1) Verify dependencies (directory services, CA availability, backup window).
+2) Check hypervisor health: avoid starting large profiles if RAM > 85% or swap > 20%.
+3) Start the smallest profile that satisfies the activity.
+4) Validate via hypervisor UI checks.
+5) Record the change in `docs/progress.md` when it affects uptime.
+
 ## Power controls (hypervisor)
 - Start/stop VMs using the hypervisor management UI or CLI.
 
