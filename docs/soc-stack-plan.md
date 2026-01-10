@@ -13,6 +13,7 @@
 - Domain join for SOC Linux hosts and Windows workstations under `lab.example.net`.
 - SIEM agents on all endpoints after the stack is stable.
 - Dashboard UI hosted on the SOC host (no containers required).
+- Dashboard search routes to the internal research gateway (no public search providers).
 
 ## Dependencies
 - Hypervisor reachable with adequate resources for SOC VMs.
